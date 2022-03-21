@@ -1,0 +1,37 @@
+.star {
+  fill: red;
+  height: 100%;
+  vertical-align: middle;
+}
+
+.priceCard_container {
+  height: 18rem;
+  width: 12rem;
+  line-height: 130%;
+}
+
+.picture_container {
+  position: relative;
+}
+
+.main_picture {
+  height: 14rem;
+  width: 12rem;
+  border-radius: 0.5rem;
+}
+
+.offer_state_label {
+  position: absolute;
+  left: 4px;
+  top: 4px;
+  background-color: whitesmoke;
+  padding: 4px 4px 4px 4px;
+  border-radius: 4px;
+  text-transform: uppercase;
+}
+
+.details {
+  color: #918e9b;
+  padding-left: 0.5rem;
+  line-height: 200%;
+}

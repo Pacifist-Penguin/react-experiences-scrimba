@@ -1,0 +1,11 @@
+p {
+  max-width: 40rem;
+}
+
+main > * {
+  margin-inline: 1rem;
+}
+
+main {
+  margin-top: 6rem;
+}
