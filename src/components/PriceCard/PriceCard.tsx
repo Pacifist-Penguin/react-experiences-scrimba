@@ -5,27 +5,30 @@ type PriceCard = {
   imageSrc: string;
   rating: number;
   reviews: number;
-  country: string;
+  location: string | 'ONLINE';
   description: string;
   price: number;
-  offerState: 'Sold Out' | 'Online' | 'Offline';
+  openSpots: number;
 };
 
-export default ({
-  imageSrc,
-  rating,
-  reviews,
-  country,
-  description,
-  price,
-  offerState,
-}: PriceCard) => {
+export default ({ item }: { item: PriceCard }) => {
+  let labelText = 'SOLD OUT';
+  const { imageSrc, rating, reviews, location, description, price, openSpots } =
+    item;
+  let showLabel = false;
+  if (openSpots < 1) {
+    showLabel = true;
+  } else if (location === 'ONLINE') {
+    showLabel = true;
+    labelText = 'ONLINE';
+  }
+
   return (
     <div className="priceCard_container">
       {/* actual image */}
       <div className="picture_container">
         <img className="main_picture" src={imageSrc} />
-        <div className="offer_state_label">{offerState}</div>
+        {showLabel && <div className="offer_state_label">{labelText}</div>}
       </div>
       {/* rating image */}
       <div>
@@ -39,7 +42,7 @@ export default ({
         </svg>
         {rating}
         <span className="details">
-          ({reviews}) • {country}
+          ({reviews}) • {location}
         </span>
       </div>
       {description} <br />

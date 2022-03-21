@@ -3,6 +3,16 @@ import PriceCard from '../PriceCard/PriceCard';
 import './MainContent.css';
 
 export default () => {
+  const itemMock = {
+    imageSrc:
+      'https://www.rd.com/wp-content/uploads/2020/07/00_OPENER-Final.jpg',
+    rating: 5,
+    price: 136,
+    openSpots: 0,
+    reviews: 2,
+    location: 'ONLINE',
+    description: 'Cats!',
+  };
   return (
     <main>
       <div>Image collage should be here</div>
@@ -13,17 +23,7 @@ export default () => {
         one-of-a-kind hosts—all without leaving home. Join unique interactive
         activities led by one-of-a-kind hosts—all without leaving home.
       </p>
-      <PriceCard
-        imageSrc={
-          'https://www.rd.com/wp-content/uploads/2020/07/00_OPENER-Final.jpg'
-        }
-        rating={5}
-        price={136}
-        offerState={'Sold Out'}
-        reviews={2}
-        country={'UAE'}
-        description={'Cats!'}
-      />
+      <PriceCard item={itemMock} />
     </main>
   );
 };
